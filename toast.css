@@ -1,0 +1,22 @@
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -85px;
+    border-radius: 6px;
+    padding: 10px 10px;
+    width: 150px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+.info {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.error {
+    background-color: rgba(228, 43, 60, 0.5);
+}
+.success {
+    background-color: rgba(37, 198, 60, 0.5);
+}

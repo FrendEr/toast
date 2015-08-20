@@ -107,7 +107,7 @@
                 .addClass(status[options.status] + ' animated ' + options.animateIn);
 
             timer = setTimeout(function() {
-                target.removeClass('animated ' + options.animateIn).addClass('animated ' + options.animateOut);
+                target.addClass(options.animateOut);
             }, options.duration);
 
             return target.appendTo(document.body);

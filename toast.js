@@ -1,30 +1,36 @@
-
-/* ===============================================
- * @name     toast.js
- * @author   Frend
- * @github   https://github.com/FrendEr/toast
- * ===============================================
+/* ==============================================
+ *
+ *  @name     toast.js
+ *  @author   Frend
+ *  @github   https://github.com/FrendEr/toast.js
+ *
+ * ==============================================
  */
 
 ;(function(define) {
     define(['jquery'], function($) {
+
         'use strict';
 
-        var timer;
+        var timer = null;
 
         // message status
         var status = {
-            info    : 'info',
-            error   : 'error',
-            success : 'success'
+            info    : 'toast-info',
+            error   : 'toast-error',
+            success : 'toast-success'
         };
 
         // animation type,
-        // use animate.css(https://github.com/daneden/animate.css)
+        // more info in animate.css(https://github.com/daneden/animate.css)
         var animations = {
-            shake    : 'shake',
-            flipInX  : 'flipInX',
-            fadeIn   : 'fade'
+            shake       : 'shake',
+            flipInX     : 'flipInX',
+            flipOutX    : 'flipOutX',
+            fadeIn      : 'fade',
+            fadeInUp    : 'fadeInUp',
+            fadeOutDown : 'fadeOutDown',
+            fadeOutUp   : 'fadeOutUp'
         };
 
         // toast object
@@ -40,10 +46,12 @@
          * @function  info
          * @usage     display normal message
          */
-        function info(message, animation) {
+        function info(message, animateIn, duration, animateOut) {
             return notify({
                 message: message,
-                animation: animation,
+                animateIn: animateIn,
+                duration: duration || 2000,
+                animateOut: animateOut || 'fadeOut',
                 status: 'info'
             });
         }
@@ -52,10 +60,12 @@
          * @function  error
          * @usage     display error message
          */
-        function error(message, animation) {
+        function error(message, animateIn, duration, animateOut) {
             return notify({
                 message: message,
-                animation: animation,
+                animateIn: animateIn,
+                duration: duration || 2000,
+                animateOut: animateOut || 'fadeOut',
                 status: 'error'
             });
         }
@@ -64,10 +74,12 @@
          * @function  success
          * @usage     display success message
          */
-        function success(message, animation) {
+        function success(message, animateIn, duration, animateOut) {
             return notify({
                 message: message,
-                animation: animation,
+                animateIn: animateIn,
+                duration: duration || 2000,
+                animateOut: animateOut || 'fadeOut',
                 status: 'success'
             });
         }
@@ -77,21 +89,26 @@
          * @usage     core function
          */
         function notify(options) {
-            var target = $('<div class="message"></div>');
+            var target;
 
-            if (timer !== null) {
-                $('.message').remove();
+            if (timer !== null && $('.toast-message').length) {
+                // clear timeout
                 clearTimeout(timer);
                 timer = null;
+
+                // reset the single object
+                target = $('.toast-message').attr('class', 'toast-message').show();
+            } else if (!$('.toast-message').length) {
+                target = $('<div class="toast-message"></div>');
             }
 
             target
-                .addClass(status[options.status] + ' animated ' + options.animation)
-                .html(options.message);
+                .html(options.message)
+                .addClass(status[options.status] + ' animated ' + options.animateIn);
 
             timer = setTimeout(function() {
-                target.remove();
-            }, options.duration || 2000);
+                target.removeClass('animated ' + options.animateIn).addClass('animated ' + options.animateOut);
+            }, options.duration);
 
             return target.appendTo(document.body);
         }

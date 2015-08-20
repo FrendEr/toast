@@ -1,6 +1,6 @@
 # Toast
 
-> A tiny plugin to display tips message. Animation dependcies on [animate.css](https://github.com/daneden/animate.css).
+> A tiny plugin to display content message. Animation dependcies on [animate.css](https://github.com/daneden/animate.css).
 
 ## API
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>toast styls demo</title>
+        <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css" media="screen" title="no title" charset="utf-8">
+        <style media="screen">
+            .message {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                margin-top: -20px;
+                margin-left: -85px;
+                border-radius: 6px;
+                padding: 10px 10px;
+                width: 150px;
+                font-size: 14px;
+                color: #fff;
+                text-align: center;
+            }
+            .info {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            .error {
+                background-color: rgba(228, 43, 60, 0.5);
+            }
+            .success {
+                background-color: rgba(37, 198, 60, 0.5);
+            }
+        </style>
+    </head>
+    <body>
+        <button type="button" name="button" id="info">show info</button>
+        <button type="button" name="button" id="error">show error</button>
+        <button type="button" name="button" id="success">show success</button>
+        <script src="./node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
+        <script src="./toast.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            $(function() {
+                document.querySelector('#info').onclick = function() {
+                    toast.info('请输入手机号码', 'flipInX');
+                }
+
+                document.querySelector('#error').onclick = function() {
+                    toast.error('输入的手机号码错误！', 'shake', 4000);
+                }
+
+                document.querySelector('#success').onclick = function() {
+                    toast.success('订单提交成功！', 'fadeIn');
+                }
+            });
+        </script>
+    </body>
+</html>

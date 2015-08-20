@@ -1,0 +1,27 @@
+{
+  "name": "toast",
+  "version": "1.0.0",
+  "description": "a tiny plugin to display tips message",
+  "main": "toast.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrendEr/toast.git"
+  },
+  "keywords": [
+    "tips",
+    "plugin"
+  ],
+  "author": "Frend",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FrendEr/toast/issues"
+  },
+  "homepage": "https://github.com/FrendEr/toast#readme",
+  "dependencies": {
+    "animate.css": "^3.4.0",
+    "jquery": "^2.1.4"
+  }
+}

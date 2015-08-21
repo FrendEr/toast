@@ -24,11 +24,11 @@
   - `shake`
   - `fadeIn`
   - `flipInX`
-  - `fadeOutUp`
+  - `fadeInUp`
 
   - **animateOut**
   - `flipOutX`
-  - `fadeInUp`
+  - `fadeOutUp`
   - `fadeOutDown`
 
 

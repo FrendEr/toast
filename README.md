@@ -20,14 +20,18 @@
 
 > refers to [animate.css](https://github.com/daneden/animate.css), more animation support you can refer to [animate.css](https://github.com/daneden/animate.css) and extend this plugin. Default support such as:
 
+  - **animateIn**
   - `shake`
-  - `flipInX`
-  - `flipOutX`
   - `fadeIn`
+  - `flipInX`
+  - `fadeOutUp`
+
+  - **animateOut**
+  - `flipOutX`
   - `fadeInUp`
   - `fadeOutDown`
-  - `fadeOutUp`
+
 
 #### **duration**
 
-> duration time, such as 3000ms or 3s. default is 2000ms.
+> duration time, default is 2000ms.

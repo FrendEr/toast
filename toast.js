@@ -27,7 +27,7 @@
             shake       : 'shake',
             flipInX     : 'flipInX',
             flipOutX    : 'flipOutX',
-            fadeIn      : 'fade',
+            fadeIn      : 'fadeIn',
             fadeInUp    : 'fadeInUp',
             fadeOutDown : 'fadeOutDown',
             fadeOutUp   : 'fadeOutUp'

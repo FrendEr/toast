@@ -35,3 +35,14 @@
 #### **duration**
 
 > duration time, default is 2000ms.
+
+
+## Demo
+
+```js
+
+git clone https://github.com/FrendEr/toast.js.git
+cd toast.js
+open styles-demo.html
+
+```

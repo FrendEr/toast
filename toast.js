@@ -106,6 +106,9 @@
 
             timer = setTimeout(function() {
                 target.addClass(options.animateOut);
+
+                // custom callback trigger
+                (typeof options.callback === 'function') && options.callback();
             }, options.duration);
 
             return target.appendTo(document.body);
@@ -113,7 +116,7 @@
 
         /*
          * @function   extend
-         * @usage      extend object, don't support deep-clone, keep the options simple
+         * @usage      extend object, don't support deep-clone, please keep the options simple
          */
         function extend(destination, source) {
             for (var prop in source) {

@@ -36,6 +36,10 @@
 
 > duration time, default 2000ms.
 
+#### **callback**
+
+> trigger custom `callback` when animation complete.
+
 
 ## Demo
 

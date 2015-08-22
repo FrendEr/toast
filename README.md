@@ -4,11 +4,11 @@
 
 ## API
 
-- **toast.info(message, animateIn, duration, animateOut)**
+- **toast.info(options)**
 
-- **toast.error(message, animateIn, duration, animateOut)**
+- **toast.error(options)**
 
-- **toast.sucess(message, animateIn, duration, animateOut)**
+- **toast.sucess(options)**
 
 ## Options
 
@@ -34,7 +34,7 @@
 
 #### **duration**
 
-> duration time, default is 2000ms.
+> duration time, default 2000ms.
 
 
 ## Demo

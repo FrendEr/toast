@@ -15,15 +15,27 @@
         <script type="text/javascript">
             $(function() {
                 document.querySelector('#info').onclick = function() {
-                    toast.info('请输入手机号码', 'flipInX', 2000, 'flipOutX');
+                    toast.info({
+                        message: '请输入手机号码',
+                        animateIn: 'flipInX',
+                        animateOut: 'flipOutX'
+                    });
                 }
 
                 document.querySelector('#error').onclick = function() {
-                    toast.error('输入的手机号码错误！', 'shake', 2000, 'fadeOutDown');
+                    toast.error({
+                        message: '输入的手机号码错误！',
+                        animateIn: 'shake',
+                        animateOut: 'fadeOutDown'
+                    });
                 }
 
                 document.querySelector('#success').onclick = function() {
-                    toast.success('订单提交成功！', 'fadeIn', 2000, 'fadeOutUp');
+                    toast.success({
+                        message: '订单提交成功！',
+                        animateIn: 'fadeIn',
+                        animateOut: 'fadeOutUp'
+                    });
                 }
             });
         </script>

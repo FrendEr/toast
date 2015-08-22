@@ -108,7 +108,7 @@
                 target.addClass(options.animateOut);
 
                 // custom callback trigger
-                (typeof options.callback === 'function') && options.callback();
+                options.callback && typeof options.callback === 'function' && options.callback.call();
             }, options.duration);
 
             return target.appendTo(document.body);
